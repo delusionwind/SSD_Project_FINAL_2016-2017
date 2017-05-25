@@ -1,31 +1,13 @@
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.Panel;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
+import java.awt.Dimension;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import java.awt.FlowLayout;
-import java.awt.GridBagLayout;
-import javax.swing.BoxLayout;
-import javax.swing.JToolBar;
 import javax.swing.JTextPane;
-import java.awt.TextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
-import javax.swing.SpringLayout;
-import javax.swing.border.CompoundBorder;
+
 import javax.swing.table.DefaultTableModel;
 
 public class Home extends JFrame{
