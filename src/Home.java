@@ -18,7 +18,7 @@ import java.awt.TextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.Box;
+
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import com.jgoodies.forms.layout.FormLayout;
@@ -32,7 +32,6 @@ public class Home extends JFrame{
 	
 	public static final int HEIGHT = 900, WIDTH = 600;
 	private JTable table;
-	private JTextField textField;
 
 	public Home() {
 		super("Game Project");
@@ -46,6 +45,11 @@ public class Home extends JFrame{
 	private void initHomeData() {
 	
 	getContentPane().setLayout(null);
+		
+		JTextPane txtpnHowToPlay = new JTextPane();
+		txtpnHowToPlay.setBounds(589, 11, 268, 279);
+		txtpnHowToPlay.setText("How to Play");
+		getContentPane().add(txtpnHowToPlay);
 		
 		JButton StartButton = new JButton("Start");
 		StartButton.setBounds(589, 309, 268, 89);
@@ -74,11 +78,6 @@ public class Home extends JFrame{
 		JButton ExitButton = new JButton("Exit");
 		ExitButton.setBounds(589, 424, 268, 41);
 		getContentPane().add(ExitButton);
-		
-		textField = new JTextField();
-		textField.setBounds(589, 15, 268, 283);
-		getContentPane().add(textField);
-		textField.setColumns(10);
 	
 	
 
