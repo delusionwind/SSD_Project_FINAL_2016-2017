@@ -12,6 +12,12 @@ public class Person {
 	    this.accuracy = 0;
 	}
 	
+	public Person(String name,int score ,int accuracy){
+		this.name = "";
+		this.score = 0;
+	    this.accuracy = 0;
+	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
