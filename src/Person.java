@@ -13,9 +13,9 @@ public class Person {
 	}
 	
 	public Person(String name,int score ,int accuracy){
-		this.name = "";
-		this.score = 0;
-	    this.accuracy = 0;
+		this.name = name;
+		this.score = score;
+	    this.accuracy = accuracy;
 	}
 	
 	public void setName(String name) {
