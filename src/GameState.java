@@ -6,7 +6,7 @@ public abstract class GameState {
 		this.game = game;
 	}
 	
-	public void alphabetPressed() { }
+	public void alphabetPressed(String key) { }
 	
 	public void spacePressed() { }
 	

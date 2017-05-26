@@ -14,7 +14,7 @@ public class GOver extends GameState{
 	}
 	
 	public void update() {
-		
+		game.centerText = "TEST";
 	}
 
 }
