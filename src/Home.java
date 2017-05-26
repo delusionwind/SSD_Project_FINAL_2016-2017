@@ -17,12 +17,14 @@ public class Home extends JFrame {
 	public static final int HEIGHT = 900, WIDTH = 600;
 	private JTable table;
 
-	public List<Person> player = new ArrayList<Person>();
+    List<Person> player = new ArrayList<Person>();
 	
+    
 	
-	public Home() {
+	public Home(List<Person> player) {
 		super("Game Project");
-
+		
+		this.player = player;
 		initHomeData();
 		makeTable();
 		this.setPreferredSize(new Dimension(HEIGHT, WIDTH));
@@ -46,6 +48,7 @@ public class Home extends JFrame {
 		HowToPlay.setBounds(589, 11, 268, 279);
 		HowToPlay.setText("How to Play");
 		getContentPane().add(HowToPlay);
+		HowToPlay.setEditable(false);
 
 		JButton StartButton = new JButton("Start");
 		StartButton.setBounds(589, 324, 268, 99);
@@ -77,31 +80,39 @@ public class Home extends JFrame {
 		scrollPane.setBounds(10, 11, 556, 477);
 		getContentPane().add(scrollPane);
 
-		table = new JTable();
+		 table = new JTable();
 		
-		String Type[] = new String[]{ "Rank", "Name", "Score", "Accuracy", "Dead Enermy" };
+		String Type[] = new String[]{ "Number", "Name", "Score", "Accuracy", "Enemy killed" };
 		Object[][] playdata = new Object[player.size()][5];
 		
 		for (int i = 0; i < player.size(); i++) {
-		//	playdata[i][0] = player.get(i).getName(); Rank
+			playdata[i][0] = i; 
 			playdata[i][1] = player.get(i).getName();
 			playdata[i][2] = player.get(i).getScore();
 			playdata[i][3] = player.get(i).getAccuracy();
-		//	playdata[i][4] = player.get(i).getScore(); Enemy Killed
+			playdata[i][4] = player.get(i).getScore();
 	
 		}
 		
-		
-	
 		table.setModel(new DefaultTableModel(playdata,Type));
-		
-		
 		scrollPane.setViewportView(table);
 
 	}
+	
+	public void UpdataTable(){
+		
+	}
+	
 
 	public static void main(String[] args) {
-		Home home = new Home();
+		List<Person> pl = new ArrayList<Person>();
+		pl.add(new Person());
+		pl.add(new Person("name",2,5,58));
+		pl.add(new Person("n55me",6,87,99));
+
+
+		
+		Home home = new Home(pl);
 		home.setVisible(true);
 		home.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
