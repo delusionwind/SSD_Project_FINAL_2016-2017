@@ -28,13 +28,13 @@ public class Home extends JFrame{
 	
 	getContentPane().setLayout(null);
 		
-		JTextPane txtpnHowToPlay = new JTextPane();
-		txtpnHowToPlay.setBounds(589, 11, 268, 279);
-		txtpnHowToPlay.setText("How to Play");
-		getContentPane().add(txtpnHowToPlay);
+		JTextPane HowToPlay = new JTextPane();
+		HowToPlay.setBounds(589, 11, 268, 302);
+		HowToPlay.setText("How to Play");
+		getContentPane().add(HowToPlay);
 		
 		JButton StartButton = new JButton("Start");
-		StartButton.setBounds(589, 309, 268, 89);
+		StartButton.setBounds(589, 324, 268, 99);
 		StartButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -58,8 +58,18 @@ public class Home extends JFrame{
 		scrollPane.setViewportView(table);
 		
 		JButton ExitButton = new JButton("Exit");
-		ExitButton.setBounds(589, 424, 268, 41);
+		ExitButton.setBounds(589, 447, 268, 41);
 		getContentPane().add(ExitButton);
+		
+		
+		ExitButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				 System.exit(0);
+				
+			}
+		});
 	
 	
 
