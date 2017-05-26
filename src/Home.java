@@ -17,13 +17,11 @@ public class Home extends JFrame {
 	public static final int HEIGHT = 900, WIDTH = 600;
 	private JTable table;
 
-    List<Person> player = new ArrayList<Person>();
-	
-    
-	
+	List<Person> player = new ArrayList<Person>();
+
 	public Home(List<Person> player) {
 		super("Game Project");
-		
+
 		this.player = player;
 		initHomeData();
 		makeTable();
@@ -31,14 +29,11 @@ public class Home extends JFrame {
 		pack();
 
 	}
-	
-	public void addPlayer(Person person){
+
+	public void addPlayer(Person person) {
 		player.add(person);
 	}
-	
-	public List getPlayer(){
-		return player;
-	}
+
 
 	private void initHomeData() {
 
@@ -46,7 +41,7 @@ public class Home extends JFrame {
 
 		JTextPane HowToPlay = new JTextPane();
 		HowToPlay.setBounds(589, 11, 268, 279);
-		HowToPlay.setText("How to Play");
+		HowToPlay.setText("Welcome to Typer Shark! \nClick a difficulty based on your typing speed. \nPlace your hands on the keyboard and type the words on the sharks as they appear.");
 		getContentPane().add(HowToPlay);
 		HowToPlay.setEditable(false);
 
@@ -54,13 +49,12 @@ public class Home extends JFrame {
 		StartButton.setBounds(589, 324, 268, 99);
 		StartButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//add sth here
+				// add sth here
 
 			}
 		});
 		getContentPane().add(StartButton);
 
-	
 		JButton ExitButton = new JButton("Exit");
 		ExitButton.setBounds(589, 447, 268, 41);
 		getContentPane().add(ExitButton);
@@ -75,45 +69,38 @@ public class Home extends JFrame {
 		});
 
 	}
-	
-	private void makeTable(){
+
+	private void makeTable() {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 11, 556, 477);
 		getContentPane().add(scrollPane);
 
-		 table = new JTable();
-		
-		String Type[] = new String[]{ "Number", "Name", "Score", "Accuracy", "Enemy killed" };
+		table = new JTable();
+
+		String Type[] = new String[] { "Number", "Name", "Score", "Accuracy", "Enemy killed" };
 		Object[][] playdata = new Object[player.size()][5];
-		
+
 		for (int i = 0; i < player.size(); i++) {
-			playdata[i][0] = i; 
+			playdata[i][0] = i + 1;
 			playdata[i][1] = player.get(i).getName();
 			playdata[i][2] = player.get(i).getScore();
 			playdata[i][3] = player.get(i).getAccuracy();
-			playdata[i][4] = player.get(i).getScore();
-	
+			playdata[i][4] = player.get(i).getKill();
+
 		}
-		
-		table.setModel(new DefaultTableModel(playdata,Type));
+
+		table.setModel(new DefaultTableModel(playdata, Type));
 		scrollPane.setViewportView(table);
 
 	}
-	
-	public void UpdataTable(){
-		
-	}
-	
+
+
 
 	public static void main(String[] args) {
-		List<Person> pl = new ArrayList<Person>();
-		pl.add(new Person());
-		pl.add(new Person("name",2,5,58));
-		pl.add(new Person("n55me",6,87,99));
-
-
 		
-		Home home = new Home(pl);
+		
+
+		Home home = new Home();
 		home.setVisible(true);
 		home.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
