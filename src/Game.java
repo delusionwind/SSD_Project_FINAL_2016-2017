@@ -17,6 +17,7 @@ public class Game extends Observable{
 	public int hit;
 	public int baseSpeed;
 	public String centerText,centerText2,centerText3;
+	public String endingText;
 	
 	public Game() {
 		score = 0;
@@ -28,6 +29,7 @@ public class Game extends Observable{
 		centerText = "Press SPACEBAR to START";
 		centerText2 = "";
 		centerText3 = "";
+		endingText = "";
 		wave = false;
 		running = false;
 		this.state = new GPause(this);
@@ -96,8 +98,7 @@ public class Game extends Observable{
 	
 	public void exit() {
 		setChanged();
-		//
-		notifyObservers(new Person());
+		notifyObservers(new Person(endingText,score,accuracy,killed));
 	}
 	
 	public void setState(GameState newState) {

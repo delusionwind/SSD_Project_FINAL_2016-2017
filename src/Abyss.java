@@ -99,13 +99,16 @@ public class Abyss extends JFrame implements Observer{
 		
 	public void exit(Person p) {
 		people.add(p);
+		Home home = new Home(people);
+		home.setVisible(true);
+		home.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		dispose();
 	}
 	
 	//temporary for testing this JFrame
-	public static void main(String[] args) {
-		Abyss c = new Abyss(new ArrayList<Person>());
-		c.setVisible(true);
-		c.start();
-	}
+//	public static void main(String[] args) {
+//		Abyss c = new Abyss(new ArrayList<Person>());
+//		c.setVisible(true);
+//		c.start();
+//	}
 }
