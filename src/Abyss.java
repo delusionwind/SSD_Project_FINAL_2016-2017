@@ -4,6 +4,8 @@ import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -18,8 +20,10 @@ public class Abyss extends JFrame implements Observer{
 	
 	private JPanel panel;
 	private Game game;
+	private List<Person> people = new ArrayList<Person>();
 	
-	public Abyss() {
+	public Abyss(List<Person> people) {
+		this.people = people;
 		initComponents();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setPreferredSize(new Dimension(HEIGHT,WIDTH));
@@ -94,12 +98,13 @@ public class Abyss extends JFrame implements Observer{
 	}
 		
 	public void exit(Person p) {
+		people.add(p);
 		dispose();
 	}
 	
 	//temporary for testing this JFrame
 	public static void main(String[] args) {
-		Abyss c = new Abyss();
+		Abyss c = new Abyss(new ArrayList<Person>());
 		c.setVisible(true);
 		c.start();
 	}

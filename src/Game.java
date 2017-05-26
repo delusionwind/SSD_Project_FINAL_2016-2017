@@ -3,7 +3,8 @@ import java.util.List;
 import java.util.Observable;
 
 public class Game extends Observable{
-	
+	public static String[] names = new String[]{"HELLO","GOODBYE","ANT","CHRONOLOGICALLY","EASY","DIFFICULT",
+			"IAMSPACESHIP","NEWTAB","READ","WRITE","BAD"};
 	public GameState state;
 	public List<IEnemy> enemies = new ArrayList<IEnemy>();
 	public boolean wave;
@@ -14,6 +15,7 @@ public class Game extends Observable{
 	public int accuracy;
 	public int type;
 	public int hit;
+	public int baseSpeed;
 	public String centerText,centerText2,centerText3;
 	
 	public Game() {
@@ -22,6 +24,7 @@ public class Game extends Observable{
 		accuracy = 0;
 		type = 0;
 		hit = 0;
+		baseSpeed = 2;
 		centerText = "Press SPACEBAR to START";
 		centerText2 = "";
 		centerText3 = "";
@@ -44,6 +47,7 @@ public class Game extends Observable{
 					}
 					if(wave == false) {
 						addEnemies();
+						baseSpeed++;
 						wave = true;
 					}
 					update();
@@ -60,13 +64,18 @@ public class Game extends Observable{
 	}
 	
 	private void addEnemies() {
-		enemies.add(new EnemyA(920,150,3,"HELLO"));
-		enemies.add(new EnemyA(920,200,2,"HEL"));
-		enemies.add(new EnemyA(920,250,3,"YOLO"));
-		enemies.add(new EnemyA(920,300,3,"HI"));
-		enemies.add(new EnemyA(920,350,15,"ULTRAMAN"));
-		enemies.add(new EnemyA(920,400,2,"SENTAI"));
-		enemies.add(new EnemyA(920,450,3,"SEMPAINOTICEME"));
+		int xp = 150;
+		for(int i=0; i<7; i++) {
+			enemies.add(new EnemyA(920,xp+(i*50),baseSpeed+(int)(Math.random()*5),names[(int)(Math.random()*names.length)]));
+		}
+		
+//		enemies.add(new EnemyA(920,150,3,"HELLO"));
+//		enemies.add(new EnemyA(920,200,2,"HEL"));
+//		enemies.add(new EnemyA(920,250,3,"YOLO"));
+//		enemies.add(new EnemyA(920,300,3,"HI"));
+//		enemies.add(new EnemyA(920,350,15,"ULTRAMAN"));
+//		enemies.add(new EnemyA(920,400,2,"SENTAI"));
+//		enemies.add(new EnemyA(920,450,3,"SEMPAINOTICEME"));
 	}
 	
 	public void alphabetPressed(String key) {
