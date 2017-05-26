@@ -87,11 +87,11 @@ public class Home extends JFrame {
 		Object[][] playdata = new Object[player.size()][5];
 		
 		for (int i = 0; i < player.size(); i++) {
-			playdata[i][0] = i; 
+			playdata[i][0] = i+1; 
 			playdata[i][1] = player.get(i).getName();
 			playdata[i][2] = player.get(i).getScore();
 			playdata[i][3] = player.get(i).getAccuracy();
-			playdata[i][4] = player.get(i).getScore();
+			playdata[i][4] = player.get(i).getKill();
 	
 		}
 		
