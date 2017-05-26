@@ -13,7 +13,8 @@ public class Person {
 	}
 	
 	public Person(String name,int score ,int accuracy){
-		this.name = "";
+
+		this.name = name;
 		this.score = score;
 	    this.accuracy = accuracy;
 	}

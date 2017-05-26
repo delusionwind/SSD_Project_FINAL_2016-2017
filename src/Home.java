@@ -52,11 +52,10 @@ public class Home extends JFrame {
 
 		table = new JTable();
 		
-		String Type[] = new String[]{ "Number", "Name", "Score", "Accuracy", "Dead Enermy" };
+		String Type[] = new String[]{ "Rank", "Name", "Score", "Accuracy", "Dead Enermy" };
 		
-	
 		
-		table.setModel(new DefaultTableModel(new Object[][] {{ "Number", "Name", "Score", "Accuracy", "Dead Enermy" }},
+		table.setModel(new DefaultTableModel(new Object[][] {},
 			Type));
 		
 		

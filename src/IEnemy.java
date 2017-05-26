@@ -9,6 +9,8 @@ public interface IEnemy {
 	
 	public String getString();
 	
+	public boolean reach();
+	
 	public boolean dead();
 
 }
