@@ -1,4 +1,5 @@
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.Observable;
@@ -19,14 +20,23 @@ public class Abyss extends JFrame implements Observer{
 	public Abyss() {
 		super("Abyss Mode");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setPreferredSize(new Dimension(HEIGHT,WIDTH));
 		addKeyListener(new KeyControl());
 		initComponents();
 		pack();
 	}
 	
 	private void initComponents(){
-		
+		panel = new JPanel() {
+			{
+				setPreferredSize(new Dimension(HEIGHT,WIDTH));
+			}
+			
+			@Override
+			public void paint(Graphics g) {
+				super.paint(g);
+				//
+			}
+		};
 	}
 
 	@Override
@@ -39,8 +49,10 @@ public class Abyss extends JFrame implements Observer{
 		
 		public void keyPressed(KeyEvent e) {
 			super.keyPressed(e);
-			if( e.getKeyChar() >= 97 && e.getKeyChar() <= 122) {
-				
+			if( e.getKeyChar() >= 97 && e.getKeyChar() <= 122 ) {
+				//
+			}else if( e.getKeyChar() == 32 ) {
+				//
 			}
 		}
 	}
