@@ -41,7 +41,7 @@ public class Home extends JFrame {
 
 		JTextPane HowToPlay = new JTextPane();
 		HowToPlay.setBounds(589, 11, 268, 279);
-		HowToPlay.setText("Welcome to Typer Shark! \nClick a difficulty based on your typing speed. \nPlace your hands on the keyboard and type the words on the sharks as they appear.");
+		HowToPlay.setText("Welcome to Typer Space! \nClick a difficulty based on your typing speed. \nPlace your hands on the keyboard and type the words on the BOX as they appear.");
 		getContentPane().add(HowToPlay);
 		HowToPlay.setEditable(false);
 
