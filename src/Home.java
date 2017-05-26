@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 9cc57aceeee455f14a73e54fdb90a229e9f1a2b2
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JTextPane;
@@ -10,11 +6,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
-<<<<<<< HEAD
-
-import javax.swing.table.DefaultTableModel;
-=======
->>>>>>> 9cc57aceeee455f14a73e54fdb90a229e9f1a2b2
 
 import javax.swing.table.DefaultTableModel;
 public class Home extends JFrame{
@@ -36,11 +27,7 @@ public class Home extends JFrame{
 	getContentPane().setLayout(null);
 		
 		JTextPane HowToPlay = new JTextPane();
-<<<<<<< HEAD
-		HowToPlay.setBounds(589, 11, 268, 302);
-=======
 		HowToPlay.setBounds(589, 11, 268, 279);
->>>>>>> 9cc57aceeee455f14a73e54fdb90a229e9f1a2b2
 		HowToPlay.setText("How to Play");
 		getContentPane().add(HowToPlay);
 		
