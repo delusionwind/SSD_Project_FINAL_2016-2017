@@ -54,6 +54,7 @@ public class Home extends JFrame {
 		StartButton.setBounds(589, 324, 268, 99);
 		StartButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//add sth here
 
 			}
 		});
