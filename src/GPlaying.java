@@ -31,7 +31,7 @@ public class GPlaying extends GameState{
 		for(IEnemy enemy : game.enemies) {
 			enemy.move();
 			if(enemy.reach()) {
-				game.running = false;
+				game.wave = false;
 				game.setState(new GOver(game));
 			}
 		}

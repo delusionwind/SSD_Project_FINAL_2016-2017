@@ -54,6 +54,8 @@ public class Abyss extends JFrame implements Observer{
 		g.drawString("Enemy Killed: " + game.killed, 300, 20);
 		g.drawString("Accuracy: " + game.accuracy, 450, 20);
 		g.drawString(game.centerText, 400, 300);
+		g.drawString(game.centerText2, 350, 320);
+		g.drawString(game.centerText3, 400, 340);
 	}
 	
 	private void drawEnemy(Graphics g) {
@@ -63,7 +65,7 @@ public class Abyss extends JFrame implements Observer{
 			}
 			if(game.state instanceof GPlaying) {
 				g.setColor(Color.WHITE);
-				g.drawString(enemy.getString() + "", enemy.getX(), enemy.getY());
+				g.drawString(enemy.getString() + "", enemy.getX() + 5, enemy.getY() + 20);
 			}
 			g.setColor(Color.BLUE);
 			g.drawRect(enemy.getX(), enemy.getY(), 80, 50);
@@ -74,6 +76,9 @@ public class Abyss extends JFrame implements Observer{
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		repaint();
+		if(arg1 != null) {
+			exit((Person)arg1);
+		}
 	}
 	
 	class KeyControl extends KeyAdapter {
@@ -88,6 +93,9 @@ public class Abyss extends JFrame implements Observer{
 		}
 	}
 		
+	public void exit(Person p) {
+		dispose();
+	}
 	
 	//temporary for testing this JFrame
 	public static void main(String[] args) {

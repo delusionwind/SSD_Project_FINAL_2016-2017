@@ -14,7 +14,7 @@ public class Game extends Observable{
 	public int accuracy;
 	public int type;
 	public int hit;
-	public String centerText;
+	public String centerText,centerText2,centerText3;
 	
 	public Game() {
 		score = 0;
@@ -23,6 +23,8 @@ public class Game extends Observable{
 		type = 0;
 		hit = 0;
 		centerText = "Press SPACEBAR to START";
+		centerText2 = "";
+		centerText3 = "";
 		wave = false;
 		running = false;
 		this.state = new GPause(this);
@@ -62,7 +64,7 @@ public class Game extends Observable{
 		enemies.add(new EnemyA(920,200,2,"HEL"));
 		enemies.add(new EnemyA(920,250,3,"YOLO"));
 		enemies.add(new EnemyA(920,300,3,"HI"));
-		enemies.add(new EnemyA(920,350,8,"ULTRAMAN"));
+		enemies.add(new EnemyA(920,350,15,"ULTRAMAN"));
 		enemies.add(new EnemyA(920,400,2,"SENTAI"));
 		enemies.add(new EnemyA(920,450,3,"SEMPAINOTICEME"));
 	}
@@ -81,6 +83,12 @@ public class Game extends Observable{
 		state.update();
 		this.setChanged();
 		this.notifyObservers();
+	}
+	
+	public void exit() {
+		setChanged();
+		//
+		notifyObservers(new Person());
 	}
 	
 	public void setState(GameState newState) {

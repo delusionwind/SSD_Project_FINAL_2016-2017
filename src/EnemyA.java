@@ -48,7 +48,7 @@ public class EnemyA implements IEnemy{
 
 	@Override
 	public boolean reach() {
-		if(x == 0) {
+		if(x <= 0) {
 			return true;
 		}
 		return false;
