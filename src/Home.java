@@ -56,7 +56,7 @@ public class Home extends JFrame {
 		
 	
 		
-		table.setModel(new DefaultTableModel(new Object[][] {{ "Number", "Name", "Score", "Accuracy", "Dead Enermy" }},
+		table.setModel(new DefaultTableModel(new Object[][] {{ "Rank", "Name", "Score", "Accuracy", "Dead Enermy" }},
 			Type));
 		
 		
